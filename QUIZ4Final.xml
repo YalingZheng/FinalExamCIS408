@@ -33,8 +33,7 @@
         <qanswer>7</qanswer>
         <qanswer>8</qanswer>
       </qitem>		
-    </qitems>
-    <qitem>
+      <qitem>
         <question>World War I began in which year? </question>
         <qanswer>1923</qanswer>
         <qanswer correct="y">1914</qanswer>
