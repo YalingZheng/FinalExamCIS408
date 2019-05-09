@@ -1,0 +1,172 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE quiz [
+
+	<!ELEMENT quiz (title, items)>
+
+	<!ELEMENT qtitle (#PCDATA)>
+
+	<!ELEMENT ITEMS (item)+>	
+
+	<!ELEMENT ITEM (question, answer, answer+)>
+
+	<!ELEMENT question (#PCDATA)>
+
+	<!ELEMENT option (#PCDATA)>
+
+	<!ATTLIST option correct (y) #IMPLIED>
+
+]>
+
+
+
+<quiz>
+
+  <qtitle>The Quiz</qtitle>
+
+    <ITEMS>
+	
+      <ITEM>
+
+        <question>How many points are on a hexagon?</question>
+
+        <option>5</option>
+
+        <option correct="y">6</option>
+
+        <option>7</option>
+
+        <option>8</option>
+
+      </ITEM>		
+      <ITEM>
+
+        <question>World War I began in which year? </question>
+
+        <option>1923</option>
+
+        <option correct="y">1914</option>
+
+        <option>1917</option>
+
+        <option>1938</option>
+
+      </ITEM>		
+      <ITEM>
+
+        <question>World War I began in which year? </question>
+
+        <option>1923</option>
+
+        <option correct="y">1914</option>
+
+        <option>1917</option>
+
+        <option>1938</option>
+
+      </ITEM>		
+      <ITEM>
+
+        <question>Adolf Hitler was born in which country?  </question>
+
+        <option>France</option>       
+
+        <option>Austria</option>
+
+        <option>Hungary</option>
+
+        <option correct="y">Germany</option>
+
+      </ITEM>		
+      <ITEM>
+
+        <question>John F. Kennedy was assassinated in: </question>
+
+        <option>New York</option>
+
+        <option correct="y">Dallas</option>
+
+        <option>Austin</option>
+
+        <option>Miami</option>
+
+      </ITEM>		
+      <ITEM>
+
+        <question>American involvement in the Korean War took place in which decade?   </question>
+
+        <option>1970</option>
+
+        <option correct="y">1950</option>
+
+        <option>1920</option>
+
+        <option>1960</option>
+
+      </ITEM>		
+      <ITEM>
+
+        <question>The disease that ravaged and killed a third of Europe's population in the 14th century is known as:  </question>
+
+        <option>The White Death</option>
+
+        <option correct="y">The Black Plague</option>
+
+        <option>Smallpox</option>
+
+        <option>The Bubonic Plague</option>
+
+      </ITEM>		
+      <ITEM>
+
+        <question>The Hundred Years War was fought between what two countries? </question>
+
+        <option>Italy and Carthage</option>
+
+        <option correct="y">France and England</option>
+
+        <option>England and Germany</option>
+
+        <option>Spain and France</option>
+
+      </ITEM>		
+      <ITEM>
+
+        <question>What nationality of soldiers wear a white kilt? </question>
+
+        <option>France</option>
+
+        <option correct="y">Greek</option>
+
+        <option>Germany</option>
+
+        <option>Britain</option>
+
+      </ITEM>	
+      <ITEM>
+        <question>In which continent is the country Japan located?</question>
+
+        <option correct="y">Asia</option>
+
+        <option>Europe</option>
+
+        <option>Africa</option>
+
+        <option>America</option>
+
+      </ITEM>	 
+      <ITEM>
+        <question>Which one cannot swim?</question>
+
+        <option>Tuna</option>
+
+        <option correct="y">Cow</option>
+
+        <option>Whale</option>
+
+        <option>Lobster</option>
+
+      </ITEM>	 
+ </ITEMS>	  
+
+</quiz>
