@@ -41,16 +41,14 @@
         <qanswer>1917</qanswer>
         <qanswer>1938</qanswer>
       </qitem>		
-    </qitems>
-        <qitem>
+      <qitem>
         <question>World War I began in which year? </question>
         <qanswer>1923</qanswer>
         <qanswer correct="y">1914</qanswer>
         <qanswer>1917</qanswer>
         <qanswer>1938</qanswer>
       </qitem>		
-    </qitems>
-        <qitem>
+      <qitem>
         <question>Adolf Hitler was born in which country?  </question>
         <qanswer>France</qanswer>       
         <qanswer>Austria</qanswer>
@@ -78,8 +76,7 @@
         <qanswer>Smallpox</qanswer>
         <qanswer>The Bubonic Plague</qanswer>
       </qitem>		
-    </qitems>
-        <qitem>
+      <qitem>
         <question>The Hundred Years War was fought between what two countries? </question>
         <qanswer>Italy and Carthage</qanswer>
         <qanswer correct="y">France and England</qanswer>
