@@ -88,5 +88,6 @@
         <qanswer correct="y">Greek</qanswer>
         <qanswer>Germany</qanswer>
         <qanswer>Britain</qanswer>
-      </qitem>		
+      </qitem>	
+   </qitems>
 </quiz>
