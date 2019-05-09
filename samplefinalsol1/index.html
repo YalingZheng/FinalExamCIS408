@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body id="body1">
+ <div style="padding-left:5%;padding-right:5%; 
+		padding-top:20px;padding-bottom:20px;
+		display:flex;flex-flow:row;
+		align-items:center;justify-content:center;">	
+		Here is the sample xml parser for CIS408 FINAL exam question 1.
+</div>
+<script>
+	 function handleOptionChange(answerindex, thisvalue){
+		//alert(thisvalue);
+		$('#' + answerindex).val(thisvalue);		
+	 }
+</script>
+<script>
+      <!-- <item> -->
+        <!-- <question>In which continent is the country Japan located?</question> -->
+        <!-- <answer correct="y">Asia</answer> -->
+        <!-- <answer>Europe</answer> -->
+        <!-- <answer>Africa</answer> -->
+        <!-- <answer>America</answer> -->
+      <!-- </item> -->
+	var question;
+	var quizindex = 1;
+	// when the quiz is submitted, it is posted to quiz.php
+	var wholequiz = "<form id='myform' method='post' action='quiz.php'>";	
+	$.ajax({
+		type: "GET",
+		url: 'QUIZ.xml',
+		dataType: "xml",
+		success: function(xml) {
+			// in real exam, please check what tag it is 
+			// in this example (it is item)
+			$(xml).find('item').each(function(){
+			    // for each quiz item, do the following
+				var $quizentry = $(this);	
+				// in real exam, please check what tag it is 
+				// in this example, it is question
+				var question = $quizentry.find('question').text();
+				// get the correct answer 
+				var quizhtml = $(this).html();
+				//alert(quizhtml);
+				var correctanswer = "";
+				var indexcorrectbegin = quizhtml.indexOf('correct=');
+				if ( indexcorrectbegin >= 0){
+					var indexcorrectend = quizhtml.substring(indexcorrectbegin).indexOf("</answer>");
+					correctanswer = quizhtml.substring(indexcorrectbegin+12, 
+													indexcorrectbegin+indexcorrectend);
+					//alert("correct answer=" + correctanswer);
+				}
+				
+				// current all the answers
+				var wholequestion = "<h1>" + question + "</h1>";
+				wholequestion = wholequestion + "<input type='hidden' name='question" 
+									+ quizindex 
+									+ "' value='" + question + "'></input>";
+				var curoptionname = "options4question" + quizindex;
+				var answerindex = "answer" + quizindex;
+				$quizentry.find('answer').each(function () {
+					//alert($(this));
+					var curtext = $(this).text();
+					var curoptiontext = "<input type='radio' name='" + curoptionname + "' value='" + curtext + "' onclick='handleOptionChange(\"" + answerindex + "\", " + "\"" + curtext + "\");'>"				 
+										+ curtext +"</input><br>";					
+					wholequestion += curoptiontext;
+					
+				})				
+				
+				// Hint: carry correct answer to quiz.php using a hidden input
+				// correctanswer is also computed in Line 43 - Line 50
+				
+									
+				wholequestion = wholequestion + "<input type='hidden' name='answer" 
+									+ quizindex 
+									+ "' id='answer" + quizindex 
+									+ "' value=\"\"></input>";
+									
+				wholequestion = "<div style=\"padding-left:5%;padding-right:5%; " +
+									"padding-top:20px;padding-bottom:20px; " 
+									    + "align-items:left;justify-content:left;\">" 
+										+ wholequestion
+										+"</div>";
+				wholequiz += wholequestion;
+				quizindex++;	
+										
+			})	
+			var numquizs = quizindex - 1;
+			// record numquiz
+			wholequiz = wholequiz + "<input type='hidden' name='numquiz'"
+			         + "value = '" + numquizs + "'></input>";
+			
+		   // add a submit button at the end 
+			wholequiz += "<input type='submit' value='submit' style='margin-left:5%;'></input><form>";
+			$('#body1').append(wholequiz);
+		},
+		error: function(xhr, status, error) {
+			if (xhr.status != 404) {alert(error);} 
+			else {alert("404 xml not found");}
+		}
+	 })
+	</script>
+</body>
+</html> 
